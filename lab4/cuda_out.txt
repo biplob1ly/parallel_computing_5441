@@ -1,0 +1,153 @@
+[biplob@o0649 cse5441_lab4]$ time ./amr_serial 0.02 0.02 < testgrid_400_12206 
+Number of flop per iteration: 204810
+Total number of Giga flop in Device: 162.786675
+
+**************************************************************************
+dissipation converged in 794818 iterations,
+    with max DSV = 0.0846372 and min DSV = 0.0829445
+    affect rate  = 0.020000; epsilon = 0.020000
+
+Time taken on host (ms) = 133090.000000
+Giga FLOPS on Host = 1.223132
+
+**************************************************************************
+
+real	3m8.381s
+user	3m6.987s
+sys	0m1.333s
+
+TPB = 1024
+[biplob@o0649 cse5441_lab4]$ time ./amr_cuda 0.02 0.02 < testgrid_400_12206 
+Number of flop per iteration: 204810
+Total number of Giga flop in Device: 162.786675
+
+**************************************************************************
+dissipation converged in 794818 iterations,
+    with max DSV = 0.0846372 and min DSV = 0.0829445
+    affect rate  = 0.020000; epsilon = 0.020000
+
+Time taken on device (ms) = 22139.543997
+Giga FLOPS on device = 7.352756
+
+**************************************************************************
+
+real	2m3.373s
+user	1m54.176s
+sys	0m9.176s
+[biplob@o0649 cse5441_lab4]$ make clean
+rm -f amr_serial amr_cuda
+[biplob@o0649 cse5441_lab4]$ make
+icc -O3 -lrt amr_serial.c -o amr_serial
+nvcc -O3 -lrt amr_cuda.cu -o amr_cuda
+
+TPB = 512
+[biplob@o0649 cse5441_lab4]$ time ./amr_cuda 0.02 0.02 < testgrid_400_12206 
+Number of flop per iteration: 204810
+Total number of Giga flop in Device: 162.786675
+
+**************************************************************************
+dissipation converged in 794818 iterations,
+    with max DSV = 0.0846372 and min DSV = 0.0829445
+    affect rate  = 0.020000; epsilon = 0.020000
+
+Time taken on device (ms) = 13151.407155
+Giga FLOPS on device = 12.377890
+
+**************************************************************************
+
+real	1m52.548s
+user	1m45.322s
+sys	0m7.197s
+
+TPB = 256
+[biplob@o0649 cse5441_lab4]$ make clean
+rm -f amr_serial amr_cuda
+[biplob@o0649 cse5441_lab4]$ make
+icc -O3 -lrt amr_serial.c -o amr_serial
+nvcc -O3 -lrt amr_cuda.cu -o amr_cuda
+[biplob@o0649 cse5441_lab4]$ time ./amr_cuda 0.02 0.02 < testgrid_400_12206 
+Number of flop per iteration: 204810
+Total number of Giga flop in Device: 162.786675
+
+**************************************************************************
+dissipation converged in 794818 iterations,
+    with max DSV = 0.0846372 and min DSV = 0.0829445
+    affect rate  = 0.020000; epsilon = 0.020000
+
+Time taken on device (ms) = 10991.180066
+Giga FLOPS on device = 14.810664
+
+**************************************************************************
+
+real	1m49.626s
+user	1m43.325s
+sys	0m6.248s
+
+TPB = 128
+[biplob@o0649 cse5441_lab4]$ make clean
+rm -f amr_serial amr_cuda
+[biplob@o0649 cse5441_lab4]$ make
+icc -O3 -lrt amr_serial.c -o amr_serial
+nvcc -O3 -lrt amr_cuda.cu -o amr_cuda
+[biplob@o0649 cse5441_lab4]$ time ./amr_cuda 0.02 0.02 < testgrid_400_12206 
+Number of flop per iteration: 204810
+Total number of Giga flop in Device: 162.786675
+
+**************************************************************************
+dissipation converged in 794818 iterations,
+    with max DSV = 0.0846372 and min DSV = 0.0829445
+    affect rate  = 0.020000; epsilon = 0.020000
+
+Time taken on device (ms) = 10395.247646
+Giga FLOPS on device = 15.659721
+
+**************************************************************************
+
+real	1m44.730s
+user	1m37.369s
+sys	0m7.298s
+
+TPB = 64
+[biplob@o0649 cse5441_lab4]$ make clean
+rm -f amr_serial amr_cuda
+[biplob@o0649 cse5441_lab4]$ make
+icc -O3 -lrt amr_serial.c -o amr_serial
+nvcc -O3 -lrt amr_cuda.cu -o amr_cuda
+[biplob@o0649 cse5441_lab4]$ time ./amr_cuda 0.02 0.02 < testgrid_400_12206 
+Number of flop per iteration: 204810
+Total number of Giga flop in Device: 162.786675
+
+**************************************************************************
+dissipation converged in 794818 iterations,
+    with max DSV = 0.0846372 and min DSV = 0.0829445
+    affect rate  = 0.020000; epsilon = 0.020000
+
+Time taken on device (ms) = 10688.619451
+Giga FLOPS on device = 15.229906
+
+**************************************************************************
+
+real	1m52.126s
+user	1m45.954s
+sys	0m6.156s
+
+TPB: 32
+[biplob@o0649 cse5441_lab4]$ time ./amr_cuda 0.02 0.02 < testgrid_400_12206 
+Number of flop per iteration: 204810
+Total number of Giga flop in Device: 162.786675
+
+**************************************************************************
+dissipation converged in 794818 iterations,
+    with max DSV = 0.0846372 and min DSV = 0.0829445
+    affect rate  = 0.020000; epsilon = 0.020000
+
+Time taken on device (ms) = 10643.711377
+Giga FLOPS on device = 15.294165
+
+**************************************************************************
+
+real	1m50.484s
+user	1m43.917s
+sys	0m6.551s
+
+
